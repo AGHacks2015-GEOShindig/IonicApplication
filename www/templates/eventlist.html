@@ -1,0 +1,16 @@
+<ion-view view-title="Eventy koło Ciebie">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-thumbnail-left"
+                      ng-repeat="chat in data" type="item-text-wrap" href="#/tab/chats/{{chat._id}}">
+                <img ng-src="{{chat._source.cover.source}}">
+                <h2>{{chat._source.name}}</h2>
+                <script>
+                    var d = new Date(chat._source.start_time);
+                    console.log("pokaz: " + d.getDay());
+                </script>
+                <p>{{chat._source.place.location.street}} | {{chat._source.start_time | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
